@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<object class="Snippet" serializationversion="0">
+  <prologue>
+    <saved-by-versions>
+      <version>10.7.0.4</version>
+    </saved-by-versions>
+    <comment/>
+    <tags/>
+    <referenced-types>
+      <type name="_GYM"/>
+    </referenced-types>
+    <referenced-snippets/>
+    <triggers/>
+    <typed-variables>
+      <typed-variable name="gym" type-name="_GYM"/>
+    </typed-variables>
+    <global-variables/>
+    <parameters/>
+    <return-variables>
+      <variable name="gym"/>
+    </return-variables>
+    <store-in-database-variables/>
+    <device-mappings/>
+    <browser-engine>WEBKIT</browser-engine>
+  </prologue>
+  <property name="variables" class="Variables">
+    <object class="Variable" serializationversion="1">
+      <property name="name" class="String">gym</property>
+      <property name="initialAssignment" class="InitialVariableAssignment">
+        <property name="type" class="TypeReference" serializationversion="0">
+          <property name="typeName" class="String">_GYM</property>
+        </property>
+      </property>
+    </object>
+  </property>
+  <comment class="String">各ページの処理結果を確認する。</comment>
+  <body class="Body">
+    <blockBeginStep class="BlockBeginStep" id="0"/>
+    <steps class="ArrayList">
+      <object class="Try" id="1">
+        <property name="name" class="String" id="2">成否チェック</property>
+      </object>
+      <object class="Transition" serializationversion="3" id="3">
+        <property name="name" class="String">Test Tag</property>
+        <property name="stepAction" class="TestTag" serializationversion="1">
+          <property name="pattern" class="kapow.robot.plugin.common.support.expression.stringexpr.PatternValueStringExpression">
+            <property name="value" class="String">.*</property>
+          </property>
+          <property name="include" class="Boolean">true</property>
+        </property>
+        <property name="elementFinders" class="ElementFinders">
+          <object class="DefaultNamedElementAwareDOMElementFinder" serializationversion="4">
+            <property name="nodePath" class="kapow.robot.plugin.common.support.expression.stringexpr.ValueStringExpression">
+              <property name="value" class="String">.*.div.div.div.div.div</property>
+            </property>
+            <property name="attributeName" class="String">class</property>
+            <property name="attributeValue" class="kapow.robot.plugin.common.support.predicate.unary.string.FixedStringPredicate">
+              <property name="text" class="String">achieve-status</property>
+            </property>
+            <property name="nodePattern" class="kapow.robot.plugin.common.support.expression.stringexpr.PatternValueStringExpression">
+              <property name="value" class="String">.*opacity: 1.*</property>
+            </property>
+            <property name="matchAgainst" class="kapow.robot.robomaker.state.document.nodefinder.defaultnodefinder.AbstractDefaultDOMElementFinder$PatternMatchTextType">
+              <property name="enum-name" class="String">HTML</property>
+            </property>
+          </object>
+        </property>
+        <property name="errorHandler" class="ErrorHandler" serializationversion="0">
+          <property name="reportingViaAPI" class="Boolean">false</property>
+          <property name="reportingViaLog" class="Boolean">false</property>
+          <property name="controlFlow" class="kapow.robot.robomaker.robot.ControlFlow$NextAlternative">
+            <property name="targetStepSelector" class="kapow.robot.robomaker.robot.ControlFlow$TargetStepSelector">
+              <property name="name" idref="2"/>
+            </property>
+          </property>
+        </property>
+        <property name="comment">
+          <null/>
+        </property>
+        <property name="enabled" class="Boolean" id="4">true</property>
+        <property name="changedProperties" class="java.util.HashSet"/>
+      </object>
+      <object class="Transition" serializationversion="3" id="5">
+        <property name="name" class="String">Assign 結果OK</property>
+        <property name="stepAction" class="AssignVariable" serializationversion="4">
+          <property name="stringExpr" class="kapow.robot.plugin.common.support.expression.stringexpr.ValueStringExpression">
+            <property name="value" class="String">合格！</property>
+          </property>
+          <property name="variable" class="kapow.robot.plugin.common.support.AttributeName2">
+            <property name="name" class="String">gym.結果</property>
+          </property>
+        </property>
+        <property name="elementFinders" class="ElementFinders"/>
+        <property name="errorHandler" class="ErrorHandler" serializationversion="0"/>
+        <property name="comment">
+          <null/>
+        </property>
+        <property name="enabled" idref="4"/>
+        <property name="changedProperties" class="java.util.HashSet">
+          <element class="String" id="6">name</element>
+        </property>
+      </object>
+      <object class="Transition" serializationversion="3" id="7">
+        <property name="name" class="String">Return Value</property>
+        <property name="stepAction" class="ReturnVariable" serializationversion="1">
+          <property name="variableName" class="kapow.robot.plugin.common.support.VariableName">
+            <property name="name" class="String">gym</property>
+          </property>
+        </property>
+        <property name="elementFinders" class="ElementFinders"/>
+        <property name="errorHandler" class="ErrorHandler" serializationversion="0"/>
+        <property name="comment">
+          <null/>
+        </property>
+        <property name="enabled" idref="4"/>
+        <property name="changedProperties" class="java.util.HashSet"/>
+      </object>
+      <object class="Transition" serializationversion="3" id="8">
+        <property name="name" class="String">Assign 結果NG</property>
+        <property name="stepAction" class="AssignVariable" serializationversion="4">
+          <property name="stringExpr" class="kapow.robot.plugin.common.support.expression.stringexpr.ValueStringExpression">
+            <property name="value" class="String">NGです！</property>
+          </property>
+          <property name="variable" class="kapow.robot.plugin.common.support.AttributeName2">
+            <property name="name" class="String">gym.結果</property>
+          </property>
+        </property>
+        <property name="elementFinders" class="ElementFinders"/>
+        <property name="errorHandler" class="ErrorHandler" serializationversion="0"/>
+        <property name="comment">
+          <null/>
+        </property>
+        <property name="enabled" idref="4"/>
+        <property name="changedProperties" class="java.util.HashSet">
+          <element idref="6"/>
+        </property>
+      </object>
+    </steps>
+    <blockEndStep class="BlockEndStep" id="9"/>
+    <edges class="ArrayList">
+      <object class="TransitionEdge">
+        <from idref="0"/>
+        <to idref="1"/>
+      </object>
+      <object class="TransitionEdge">
+        <from idref="1"/>
+        <to idref="3"/>
+      </object>
+      <object class="TransitionEdge">
+        <from idref="1"/>
+        <to idref="8"/>
+      </object>
+      <object class="TransitionEdge">
+        <from idref="3"/>
+        <to idref="5"/>
+      </object>
+      <object class="TransitionEdge">
+        <from idref="5"/>
+        <to idref="7"/>
+      </object>
+      <object class="TransitionEdge">
+        <from idref="7"/>
+        <to idref="9"/>
+      </object>
+      <object class="TransitionEdge">
+        <from idref="8"/>
+        <to idref="7"/>
+      </object>
+    </edges>
+  </body>
+</object>

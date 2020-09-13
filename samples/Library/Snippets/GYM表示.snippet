@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<object class="Snippet" serializationversion="0">
+  <prologue>
+    <saved-by-versions>
+      <version>10.7.0.4</version>
+    </saved-by-versions>
+    <comment/>
+    <tags/>
+    <referenced-types>
+      <type name="_GYM"/>
+    </referenced-types>
+    <referenced-snippets/>
+    <triggers/>
+    <typed-variables>
+      <typed-variable name="gym" type-name="_GYM"/>
+    </typed-variables>
+    <global-variables/>
+    <parameters/>
+    <return-variables/>
+    <store-in-database-variables/>
+    <device-mappings/>
+    <browser-engine>WEBKIT</browser-engine>
+  </prologue>
+  <property name="variables" class="Variables">
+    <object class="Variable" serializationversion="1">
+      <property name="name" class="String">gym</property>
+      <property name="initialAssignment" class="InitialVariableAssignment">
+        <property name="type" class="TypeReference" serializationversion="0">
+          <property name="typeName" class="String">_GYM</property>
+        </property>
+        <property name="assignments" class="AttributeAssignments">
+          <property name="URL" class="AttributeAssignment">
+            <property name="attributeValue" class="String">http://localhost:3000</property>
+            <property name="currentlyAssigned" class="Boolean">true</property>
+            <property name="lastKnownAttributeType" class="java.lang.Class">kapow.robot.plugin.common.domain.StringAttributeType</property>
+          </property>
+        </property>
+      </property>
+    </object>
+  </property>
+  <comment class="String">適切なGYMのページを表示するための共通部品</comment>
+  <body class="Body">
+    <blockBeginStep class="BlockBeginStep" id="0"/>
+    <steps class="ArrayList">
+      <object class="Transition" serializationversion="3" id="1">
+        <property name="name" class="String">ランディングページ表示</property>
+        <property name="stepAction" class="LoadPage2">
+          <property name="urlProvider" class="kapow.robot.plugin.common.stepaction.urlprovider2.ExpressionURLProvider2">
+            <property name="expression" class="String">gym.URL + "/" + gym.page</property>
+          </property>
+          <property name="browserConfigurationSpecification" class="BrowserConfigurationSpecificationWebKit" serializationversion="26">
+            <property name="ancestorProvider" class="BrowserConfigurationSpecificationAncestorProviderForStep"/>
+          </property>
+        </property>
+        <property name="elementFinders" class="ElementFinders"/>
+        <property name="errorHandler" class="ErrorHandler" serializationversion="0"/>
+        <property name="comment">
+          <null/>
+        </property>
+        <property name="enabled" class="Boolean">true</property>
+        <property name="changedProperties" class="java.util.HashSet">
+          <element class="String">name</element>
+        </property>
+      </object>
+    </steps>
+    <blockEndStep class="BlockEndStep" id="2"/>
+    <edges class="ArrayList">
+      <object class="TransitionEdge">
+        <from idref="0"/>
+        <to idref="1"/>
+      </object>
+      <object class="TransitionEdge">
+        <from idref="1"/>
+        <to idref="2"/>
+      </object>
+    </edges>
+  </body>
+</object>
