@@ -1,2 +1,4 @@
 # バックアップ ファイルは要らない
 *~
+.history
+.gitignore
