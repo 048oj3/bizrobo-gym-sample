@@ -229,6 +229,34 @@
         </edges>
       </object>
       <object class="Transition" serializationversion="3" id="12">
+        <property name="name" class="String">Click 免許種別</property>
+        <property name="stepAction" class="Click" serializationversion="0">
+          <property name="browserConfigurationSpecification" class="BrowserConfigurationSpecificationWebKit" serializationversion="26">
+            <property name="ancestorProvider" class="BrowserConfigurationSpecificationAncestorProviderForStep"/>
+          </property>
+        </property>
+        <property name="elementFinders" class="ElementFinders">
+          <object class="DefaultNamedElementAwareDOMElementFinder" serializationversion="4">
+            <property name="nodePath" class="kapow.robot.plugin.common.support.expression.stringexpr.ValueStringExpression">
+              <property name="value" class="String">.*.div.div.div.div.*.div.div.label.label.label</property>
+            </property>
+            <property name="nodePattern" class="kapow.robot.plugin.common.support.expression.multipletype.VariableExpression" serializationversion="2">
+              <property name="variable" class="kapow.robot.plugin.common.support.AttributeName2">
+                <property name="name" class="String">フォーム2.License</property>
+              </property>
+            </property>
+          </object>
+        </property>
+        <property name="errorHandler" class="ErrorHandler" serializationversion="0"/>
+        <property name="comment">
+          <null/>
+        </property>
+        <property name="enabled" idref="1"/>
+        <property name="changedProperties" class="java.util.HashSet">
+          <element class="String">name</element>
+        </property>
+      </object>
+      <object class="Transition" serializationversion="3" id="13">
         <property name="name" class="String">Select 複数オプション</property>
         <property name="stepAction" class="SelectMultipleOptions2">
           <property name="fieldValues" class="SelectMultipleOptions2$SelectedFieldsSelection">
@@ -273,10 +301,10 @@
         </property>
         <property name="enabled" idref="1"/>
         <property name="changedProperties" class="java.util.HashSet">
-          <element class="String" id="13">name</element>
+          <element class="String" id="14">name</element>
         </property>
       </object>
-      <object class="Transition" serializationversion="3" id="14">
+      <object class="Transition" serializationversion="3" id="15">
         <property name="name" class="String">Enter 納車日</property>
         <property name="stepAction" class="EnterText">
           <property name="textExpression" class="kapow.robot.plugin.common.support.expression.stringexpr.ValueStringExpression">
@@ -303,10 +331,10 @@
         </property>
         <property name="enabled" idref="1"/>
         <property name="changedProperties" class="java.util.HashSet">
-          <element idref="13"/>
+          <element idref="14"/>
         </property>
       </object>
-      <object class="Transition" serializationversion="3" id="15">
+      <object class="Transition" serializationversion="3" id="16">
         <property name="name" class="String">Enter 納車時</property>
         <property name="stepAction" class="EnterText">
           <property name="textExpression" class="kapow.robot.plugin.common.support.expression.stringexpr.ValueStringExpression">
@@ -333,10 +361,10 @@
         </property>
         <property name="enabled" idref="1"/>
         <property name="changedProperties" class="java.util.HashSet">
-          <element idref="13"/>
+          <element idref="14"/>
         </property>
       </object>
-      <object class="Transition" serializationversion="3" id="16">
+      <object class="Transition" serializationversion="3" id="17">
         <property name="name" class="String">Enter 特記事項</property>
         <property name="stepAction" class="EnterText">
           <property name="textExpression" class="kapow.robot.plugin.common.support.expression.stringexpr.ValueStringExpression">
@@ -363,10 +391,10 @@
         </property>
         <property name="enabled" idref="1"/>
         <property name="changedProperties" class="java.util.HashSet">
-          <element idref="13"/>
+          <element idref="14"/>
         </property>
       </object>
-      <object class="Transition" serializationversion="3" id="17">
+      <object class="Transition" serializationversion="3" id="18">
         <property name="name" class="String">Click Check</property>
         <property name="stepAction" class="Click" serializationversion="0">
           <property name="browserConfigurationSpecification" class="BrowserConfigurationSpecificationWebKit" serializationversion="26">
@@ -393,7 +421,7 @@
           <element class="String">name</element>
         </property>
       </object>
-      <object class="SnippetStep" id="18">
+      <object class="SnippetStep" id="19">
         <name>
           <null/>
         </name>
@@ -402,7 +430,7 @@
           <null/>
         </snippetStepComment>
       </object>
-      <object class="End" id="19"/>
+      <object class="End" id="20"/>
     </steps>
     <blockEndStep class="BlockEndStep"/>
     <edges class="ArrayList">
@@ -424,10 +452,10 @@
       </object>
       <object class="TransitionEdge">
         <from idref="12"/>
-        <to idref="14"/>
+        <to idref="13"/>
       </object>
       <object class="TransitionEdge">
-        <from idref="14"/>
+        <from idref="13"/>
         <to idref="15"/>
       </object>
       <object class="TransitionEdge">
@@ -445,6 +473,10 @@
       <object class="TransitionEdge">
         <from idref="18"/>
         <to idref="19"/>
+      </object>
+      <object class="TransitionEdge">
+        <from idref="19"/>
+        <to idref="20"/>
       </object>
     </edges>
   </property>
